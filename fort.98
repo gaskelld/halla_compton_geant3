@@ -1,0 +1,12 @@
+  Dipole h    2.0100994      cm
+  Dipole bending angle    2.3030615      deg
+  Dipole rho    24.884792      m
+  Beam energy    11.000000      GeV
+  Dipole current    1.0000000      A
+  Dipole field    14.734568      kG
+ beam polarization   1.0000000    
+ in define_detector.F, thetab=    2.3030615    
+ cheesy poofs   18.720541    
+ detector offset   2.0000000       0.0000000       1.9200000    
+ ydet=    21.680540      cm
+ zdet=    625.50000      cm

@@ -1,0 +1,49 @@
+ macro calc_integral
+   hi/del *
+   close 0
+* hi/fil 1 ../ntuples/compton_5mmlead_20cmdet.hbook 8191
+* hi/fil 1 ../ntuples/compton_5.2mm_lead_11gev.hbook 8191
+   
+* hi/fil 1 ../ntuples/compton_11gev_5.2mm_lead.hbook 8191
+* hi/fil 1 ../ntuples/compton_11gev_no_lead.hbook 8191
+ hi/fil 1 ../ntuples/compton_11gev_nolead_cmgen.hbook 8191
+* hi/fil 1 ../ntuples/compton_11gev_5.2mm_lead_cmgen.hbook 8191
+* hi/fil 1 ../ntuples/compton_8p9gev_6mm_lead_cmgen.hbook 8191
+* hi/fil 1 ../ntuples/compton_8p9gev_nolead_cmgen.hbook 8191
+   
+   nt/plo 2.Egam_dep
+   hi/create/1d 9000 'Asym' 500 -0.05 0.5
+   
+   nent=$hinfo(1000000,'entries')
+   nt/loop 2 energyasymcalcnew.f([nent])
+
+* hi/plo 9000
+   hi/cr/1d 666 'Egamma_dep' 500 -0.001 4
+   hi/cr/1d 667 'ExA' 500 -0.1 1.2
+   
+   zone 1 3
+   opt stat
+* nt/plo 2.Egam_dep*(apower-deltaA_11gev.f) wXsect*wLumin/20000 ! ! ! ! 667
+ nt/plo 2.Egam_dep*(apower) wXsect*wLumin/20000 ! ! ! ! 667
+   avgea=$hinfo(667,'mean')
+   nt/plo 2.Egam_dep wXsect*wLumin/20000 ! ! ! ! 666
+   avge=$hinfo(666,'mean')
+   
+   rat=[avgea]/[avge]
+   mess analyzing power is [rat]
+   
+   
+   hi/plo 9000
+   
+   mean=$hinfo(9000,'mean')
+   rms=$hinfo(9000,'rms')
+   nent=$hinfo(9000,'entries')
+   
+   err=$rsigma([rms]/sqrt([nent]))
+   ferr=$rsigma(100.0*[err]/[mean])
+   
+ mess Analyzing power is [mean] +/- [err]
+ mess Fractional error is [ferr] %
+   
+
+   

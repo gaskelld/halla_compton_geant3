@@ -1,0 +1,19 @@
+ exe ~/hallc#setup
+ opt logy
+ ve/del *
+ 
+ ve/cr off(14) r 0 -1 -2 -3 1 2 3 4 5 -4 -5 -6 -7 -8
+ ve/cr power(14) r 5.56E10 5.73E10 5.81E10 5.49E10 5.91E10 7.08E10 9.75E10 1.31E11 1.86E10 6.21E10 7.63E10 8.11E10 9.27E10 1.17E11
+ ve/cr counts(14) r 14*1000
+ ve/cr ex(14) r
+ 
+* sigma off=1.0*off
+ 
+ sigma epow=power/sqrt(counts)
+ 
+ set pmci 4
+ set hcol 4
+ null -10 10 4E10 3E11
+ hplot/err off power ex epow 14 20 0.2 s
+ 
+ atit 'Detector offset (mm)' 'Power deposited (MeV/s)' 

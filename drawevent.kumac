@@ -1,0 +1,15 @@
+ clr
+do i=1,1
+  trig 
+*  draw region from d3 to d4
+* draw cave 90 180 0 -3 3 0.04 0.25
+*  draw whole chicane
+ draw cave 90 180 0 10 10 0.01 0.017
+*   trig 
+* draw ebox 90 180 20 10 10 4 4
+*  zoom in on both detectors photon detector
+* draw cave 90 180 0 -10 3 0.05 0.25 
+* draw cave 90 180 0 -195 -10 0.5 0.5 
+   dxyz
+   +Prkine 2
+enddo

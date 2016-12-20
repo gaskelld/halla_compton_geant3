@@ -1,0 +1,6 @@
+1. 11gev_synch_basicmap_6mm_5.2mm_lead.hbook: Unmodified dipole (using field map though) - 6 mm diamter collimator, 5.2 mm lead shielding 100E6 events geenerated
+2. 11gev_synch_basicmap_6mm_5.2mm_lead_neg1mm.hbook: Same as above - beam 1 mm lower.
+3. 11gev_synch_basicmap_6mm_5.2mm_lead_neg2mm.hbook: Same as above - beam 2 mm lower.
+4. 11gev_synch_basicmap_6mm_5.2mm_lead_pos1mm.hbook: Same as above - beam 1 mm higher.
+5. 11gev_synch_basicmap_6mm_5.2mm_lead_pos2mm.hbook: Same as above - beam 2 mm higher.
+

@@ -1,0 +1,18 @@
+ exe ~/hallc#setup
+ opt liny
+ 
+ ve/cr off(8) r 0 -1 -2 1 2 3 4 -0.5
+ ve/cr power(8) r 0.9697E9 0.483E11 0.1058E12 0.1113E10 0.1196E10 0.1446E10 0.1756E10 0.1177E10
+ ve/cr counts(8) r 1685 24994 53299 1913 2043 2477 2910 1742
+ ve/cr ex(8) r
+ 
+ sigma off=1.0*off
+ 
+ sigma epow=power/sqrt(counts)
+ 
+ set pmci 4
+ set hcol 4
+ null -4 6 5E8 7E9
+ hplot/err off power ex epow 8 20 0.2 s
+ 
+ atit 'Beam offset (mm)' 'Power deposited (MeV/s)' 

@@ -1,0 +1,25 @@
+ set xsiz 25
+ set xwin 2.5
+ zone 2 2
+ 
+ hi/create/1d 33 egamma 51 -1 50  
+ 
+ opt nstat
+ opt utit
+ 
+ set asiz 0.4
+ set xval 0.2
+ set xlab 1.5
+ opt utit
+ nt/plo 2.1000.0*Eparticle(1) wLumin*wXsect/500000 ! ! ! ! 33
+ atit 'E?[g]! (MeV)' 'Rate (Hz)'
+ 
+ nt/plot 2.(apower/0.85)%1000.0*Eparticle(1)/(Egmax/1000.0) ! 50000
+ 
+ atit '[r]' 'Asymmetry' 
+ 
+ nt/plo 2.1000*Egam_dep wLumin*wXsect/500000  ! ! ! ! 33
+ atit 'E?[g]! Deposited (MeV)' 'Rate (Hz)'
+ 
+ nt/plo 2.1000*Egam_dep%1000.0*Eparticle(1) ! 50000
+ atit 'E?[g]! (MeV)' 'Deposited energy (MeV)' ! 50000

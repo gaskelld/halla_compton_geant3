@@ -1,0 +1,25 @@
+* exe ~/hallc#setup
+* opt logy
+ 
+ ve/del *
+ ve/cr off(14) r 0 1 2 3 -1 -2 -3 -4 -5 -6 -7 -8 4 5
+ ve/cr power(14) r 5.451E10 5.929E10 6.177E10 5.337E10 5.728E10 5.961E10 5.884E10 6.918E10 7.385E10 7.717E10 9.249E10 1.997E11 7.465E10 1.008E11 
+ ve/cr counts(14) r 217 232 251 224 225 244 246 288 312 319 398 497 305 425
+ ve/cr ex(14) r
+ 
+* sigma off=1.0*off
+ 
+ sigma epow=power/sqrt(counts)
+ 
+ set pmci 2
+ set hcol 2
+* null -9 9 4E10 2E11
+ hplot/err off power ex epow 14 21 0.2 s
+ 
+* atit 'Beam offset (mm)' 'Power deposited (MeV/s)' 
+ 
+ set pmci 4
+ key 3 2E11 20 'Nominal dipole'
+ 
+ set pmci 2
+ key 3 2.5E11 21 'Dipole w/shims'

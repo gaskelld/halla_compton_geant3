@@ -1,0 +1,19 @@
+exe ~/hallc#setup
+ opt logy
+ ve/del *
+ 
+ ve/cr thick(3) r 0 3 5.2
+ 
+ ve/cr rate(3) r 1.345E12 1.02E11 5.451E10
+ ve/cr nevt(3) r 43714 463 217
+ 
+ sigma erate=rate/sqrt(nevt)
+ 
+ ve/cr ex(3) r
+ 
+ null -0.5 5.5 1E10 2E12
+ set pmci 4
+ set hcol 4
+ hplot/err thick rate ex erate 3 20 0.3 s
+ 
+ atit 'Lead thickness (mm)' 'Power deposited (MeV/s)' 
